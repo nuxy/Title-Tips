@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tienne">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+
+	<!-- CSS include start -->
+
+	<link rel="stylesheet" type="text/css" href="jquery.tulip.tips.min.css">
+
+	<!-- CSS include end -->
+
+
+	<!-- Javascript insert start -->
+
+	<script src="jquery.tulip.tips.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$('#container').TulipTips({
+			eventType : 'mouseover'
+		});
+	});
+	</script>
+
+	<!-- Javascript insert end -->
+
+
+	<!-- CSS overrides start -->
+
+	<style>
+		@import url( demo.css );
+	</style>
+
+	<!-- CSS overrides end -->
+
+
+	<title>Tulip Title Tips</title>
+</head>
+<body>
+
+<p id="about">
+	This <strong>jQuery</strong> plugin is <a href="jquery.tulip.tips.min.js" title="Only 2.8 kb">lightweight</a>, easy to <a href="README.html#install" title="Installation">install</a> / <a href="demo.css" title="Stylesheet">customize</a>, and is compatible with <strong>Firefox 3.6+</strong>, <strong>Chrome</strong>, <strong>Safari 5+</strong>, <strong>Opera</strong>, and <strong>Internet Explorer 7+</strong> web browsers.
+</p>
+
+
+<!-- HTML example start -->
+
+<p id="container">
+	Lorem ipsum dolor sit amet, consectetur <strong title="What is this word?">adipiscing</strong> elit. Donec vel nibh libero, id eleifend diam. Vestibulum quis sem erat, eget aliquam tellus. Etiam <strong title="Doesn't make sense">vestibulum</strong> mollis arcu, id vestibulum dolor bibendum ac. Nunc vel magna eget nulla vulputate congue non et erat. Vestibulum ac <strong title="Lorem ipsum, What?">quam</strong> nibh. Duis in tortor ligula. In porta posuere libero, ut cursus ipsum ultrices vel. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam consequat, massa quis <strong title="Port-O-Potty">porttitor</strong> tincidunt, sem metus sollicitudin tellus, sed interdum libero dui id mi. Aenean metus odio, fermentum nec malesuada vel, congue vitae velit. Mauris facilisis, arcu auctor fringilla venenatis, magna urna <strong title="Don't start a ruckus">rhoncus</strong> lorem, ac tristique augue nisi quis elit. Praesent at lectus vel metus molestie porta in vitae turpis. Aliquam ullamcorper <strong title="WTF is this?">dignissim</strong> tellus quis tincidunt. Fusce condimentum faucibus.
+</p>
+
+<p id="notes">
+	&#91; position your mouse cursor over the <strong>highlighted</strong> words &#93;
+</p>
+
+<!-- HTML example end -->
+
+
+</body>
+</html>
