@@ -53,7 +53,7 @@
 
 <h2>Set-up</h2>
 
-<p>The way this script works is fairly simple.  By defining your parent element (example: #container) using the <a href="http://api.jquery.com/category/selectors">jQuery selector</a> as describe below.  All child elements containing the <a href="http://www.w3.org/TR/html4/struct/global.html#title">title attribute</a> will be overridden with the new content output format.</p>
+<p>The way this script works is fairly simple.  By defining your parent element <code>#container</code> using the <a href="http://api.jquery.com/category/selectors">jQuery selector</a> as describe below, all child elements containing the <a href="http://www.w3.org/TR/html4/struct/global.html#title">title attribute</a> will be overridden with the new content output format.</p>
 
 <h2>Source Code</h2>
 
@@ -118,6 +118,10 @@ $(document).ready(function() {
                                      [DIV.tulip_tips.bubble]
                                                 |
                                     [SPAN.tulip_tips.content]</pre>
+
+<h2>Event Bubbling Issues</h2>
+
+<p>In cases where trigger elements are close together, and <em>mouseover</em> has been defined as the <code>eventType</code>, you will likely experience bubbling issues.  To avoid this, use the <em>mouseenter</em> event as a substitute.</p>
 
 <h2>PNG Animation Issues</h2>
 
