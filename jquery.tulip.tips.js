@@ -24,7 +24,10 @@
 				eventType  : 'click'
 			}, options);
 
-			element = '#' + $(this).attr('id');
+			// support Id and className
+			element = ( $(this).attr('id') )
+				? '#' + $(this).attr('id')
+				: '.' + $(this).attr('class');
 
 			return this.each(function() {
 				var $this = $(this),
@@ -33,7 +36,7 @@
 				if (!data) {
 					$(this).data(element, {
 						container : $(element),
-						nodes     : $(element + ' > [title]'),
+						nodes     : $(element).find('[title]'),
 						options   : settings
 					});
 
