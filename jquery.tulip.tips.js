@@ -1,5 +1,5 @@
 /*
- *  Tulip Title Tips 1.0
+ *  Tulip Title Tips
  *  Pretty output of title attribute values on mouse events
  *
  *  Copyright 2011-2012, Marc S. Brooks (http://mbrooks.info)
@@ -21,6 +21,8 @@
 				alignPos   : 'right',
 				animEasing : 'linear',
 				animSpeed  : 'slow',
+				delayOn    : 1000,
+				delayOff   : 500,
 				eventType  : 'click'
 			}, options);
 
@@ -97,14 +99,14 @@
 					});
 
 					// toggle visibility on mouse events
-					elm.bind(data.options.eventType, function(event) {
+					elm.bind(data.options.eventType, function() {
 						if ($.browser.msie) {
 							obj.css({
 								opacity : 'show'
 							});
 						}
 						else {
-							obj.stop().animate({
+							obj.stop().delay(data.options.delayOn).animate({
 								opacity : 1
 							},
 							data.options.animSpeed, data.options.animEasing);
@@ -121,7 +123,7 @@
 							});
 						}
 						else {
-							obj.stop().animate({
+							obj.stop().delay(data.options.delayOff).animate({
 								opacity : 0
 							},
 							data.options.animSpeed, data.options.animEasing,
