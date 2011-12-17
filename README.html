@@ -99,9 +99,24 @@ $(document).ready(function() {
 		<td>600</td>
 	</tr>
 	<tr>
+		<td>delayOn</td>
+		<td>animation delay in milliseconds</td>
+		<td>1000</td>
+	</tr>
+	<tr>
+		<td>delayOff</td>
+		<td>animation delay in milliseconds</td>
+		<td>500</td>
+	</tr>
+	<tr>
 		<td>eventType</td>
 		<td>mouse event to bind to the trigger element</td>
 		<td>click</td>
+	</tr>
+	<tr>
+		<td>pngAlpha</td>
+		<td>disable fadeIn/fadeOut animations (IE only)</td>
+		<td>true</td>
 	</tr>
 </table>
 
@@ -125,7 +140,7 @@ $(document).ready(function() {
 
 <h2>PNG Animation Issues</h2>
 
-<p>Due to the <a href="http://blogs.msdn.com/b/ie/archive/2005/04/26/412263.aspx">lack of support</a> for 24-bit PNG's containing alpha-transparency in Microsoft products, the animation fadeIn/Out effects for content output elements on Internet Explorer 7+ web browsers has been disabled.  I am hoping that Microsoft finally gets off their ass and fixes this issue considering it has been around for almost a decade.</p>
+<p>Due to the <a href="http://blogs.msdn.com/b/ie/archive/2005/04/26/412263.aspx">lack of support</a> for 24-bit PNG's containing alpha-transparency in Microsoft products, the animation fadeIn/Out effects for content output elements on Internet Explorer 7+ web browsers has been disabled by default.  You can re-enable this feature by setting the <code>pngAlpha</code> property to <em>false</em> when using images that do not contain alpha-channels.</p>
 
 <h2>Releases</h2>
 
