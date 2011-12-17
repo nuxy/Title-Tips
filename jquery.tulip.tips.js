@@ -23,7 +23,8 @@
 				animSpeed  : 'slow',
 				delayOn    : 1000,
 				delayOff   : 500,
-				eventType  : 'click'
+				eventType  : 'click',
+				pngAlpha   : true
 			}, options);
 
 			// support Id and className
@@ -100,7 +101,7 @@
 
 					// toggle visibility on mouse events
 					elm.bind(data.options.eventType, function() {
-						if ($.browser.msie) {
+						if ($.browser.msie && data.options.pngAlpha) {
 							obj.css({
 								opacity : 'show'
 							});
@@ -116,7 +117,7 @@
 					elm.mouseout(function(event) {
 						event.preventDefault();
 
-						if ($.browser.msie) {
+						if ($.browser.msie && data.options.pngAlpha) {
 							obj.css({
 								display : 'none',
 								opacity : 'hide'
