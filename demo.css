@@ -1,14 +1,7 @@
-/* demo only */
+/* example */
 
 body {
 	font-family: Tienne, Sans-Serif;
-}
-
-#about {
-	background-color: #F7F7F7;
-	border: 1px solid #CCCCCC;
-	padding: 5px;
-	text-align: center;
 }
 
 #container {
