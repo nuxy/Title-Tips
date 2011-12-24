@@ -21,8 +21,6 @@
 				alignPos   : 'right',
 				animEasing : 'linear',
 				animSpeed  : 'slow',
-				delayOn    : 1000,
-				delayOff   : 500,
 				eventType  : 'click',
 				pngAlpha   : true
 			}, options);
@@ -59,6 +57,8 @@
 				var $this = $(this),
 					data  = $this.data(element);
 
+				var active = null;
+
 				// process elements that contain [title] attribute
 				data.nodes.each(function() {
 					var elm = $(this);
@@ -66,7 +66,8 @@
 
 					elm.removeAttr('title', null);
 
-					elm.hover(function() {
+					// toggle visibility on mouse events
+					elm.bind(data.options.eventType, function() {
 						var elmPosX   = $(this).position().left;
 						var elmPosY   = $(this).position().top;
 						var elmHeight = $(this).height();
@@ -97,26 +98,26 @@
 							left    : objPosX,
 							top     : elmPosY - (objHeight / 2) - (elmHeight * 2)
 						});
-					});
 
-					// toggle visibility on mouse events
-					elm.bind(data.options.eventType, function() {
 						if ($.browser.msie && data.options.pngAlpha) {
 							obj.css({
 								opacity : 'show'
 							});
 						}
 						else {
-							obj.stop().delay(data.options.delayOn).animate({
-								opacity : 1
+							if (active) { return }
+
+							obj.stop().animate({
+								opacity : 1,
+								queue   : false
 							},
 							data.options.animSpeed, data.options.animEasing);
+
+							active = true;
 						}
 					});
 
-					elm.mouseout(function(event) {
-						event.preventDefault();
-
+					elm.mouseout(function() {
 						if ($.browser.msie && data.options.pngAlpha) {
 							obj.css({
 								display : 'none',
@@ -124,8 +125,11 @@
 							});
 						}
 						else {
-							obj.stop().delay(data.options.delayOff).animate({
-								opacity : 0
+							if (!active) { return }
+
+							obj.stop().animate({
+								opacity : 0,
+								queue   : false
 							},
 							data.options.animSpeed, data.options.animEasing,
 								function() {
@@ -134,7 +138,14 @@
 									});
 								}
 							);
+
+							active = null;
 						}
+					});
+
+					// prevent bubbling
+					obj.bind(data.options.eventType, function(event) {
+						event.stopPropagation();
 					});
 				});
 			});
