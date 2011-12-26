@@ -1,0 +1,18 @@
+= Tulip Title Tips
+
+Pretty output of title attribute values on mouse events that can be easily added to pre-existing elements.
+
+== Features
+
+- Extensible HTML/CSS interface.
+- Compatible with Firefox 3.6+, Chrome, Safari 5+, Opera, and Internet Explorer 7+ web browsers.
+- Easy to set-up and customize.
+- Supports multiple instances on a single document.
+
+== Installation
+
+Please refer to the {README.html}[https://github.com/nuxy/Tulip-Title-Tips/blob/master/README.html] file for more information about this package.
+
+== Author
+
+{Marc S. Brooks}[https://github.com/nuxy]
