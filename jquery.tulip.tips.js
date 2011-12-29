@@ -12,7 +12,6 @@
  */
 
 (function($) {
-	var element;
 	var methods = {
 		init : function(options) {
 
@@ -25,19 +24,14 @@
 				pngAlpha   : true
 			}, options);
 
-			// support Id and className
-			element = ( $(this).attr('id') )
-				? '#' + $(this).attr('id')
-				: '.' + $(this).attr('class');
-
 			return this.each(function() {
-				var $this = $(this),
-					data  = $this.data(element);
+				var $this = $(this);
+					data  = $this.data();
 
-				if (!data) {
-					$(this).data(element, {
-						container : $(element),
-						nodes     : $(element).find('[title]'),
+				if ( $.isEmptyObject(data) ) {
+					$(this).data({
+						container : $this,
+						nodes     : $this.find('[title]'),
 						options   : settings
 					});
 
@@ -48,14 +42,14 @@
 
 		destroy : function() {
 			return this.each(function() {
-				$(this).removeData(element);
+				$(this).removeData();
 			});
 		},
 
 		generate : function() {
 			return this.each(function() {
 				var $this = $(this),
-					data  = $this.data(element);
+					data  = $this.data();
 
 				var active = null;
 
