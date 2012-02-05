@@ -2,6 +2,8 @@
 
 Pretty output of title attribute values on mouse events that can be easily added to pre-existing elements.
 
+http://github.com/nuxy/Tulip-Title-Tips/raw/master/preview.jpg
+
 == Features
 
 - Extensible HTML/CSS interface.
