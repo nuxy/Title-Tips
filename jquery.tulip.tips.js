@@ -28,13 +28,13 @@
 					data  = $this.data();
 
 				if ( $.isEmptyObject(data) ) {
-					$(this).data({
+					$this.data({
 						container : $this,
 						nodes     : $this.find('[title]'),
 						options   : settings
 					});
 
-					$(this).TulipTips('generate');
+					$this.TulipTips('generate');
 				}
 			});
 		},
