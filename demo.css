@@ -1,12 +1,8 @@
 /* example */
 
-#container,
-#notes {
-	font-family: Tienne, Sans-Serif;
-}
-
 #container {
 	border: 1px solid #CCCCCC;
+	font-size: 16px;
 	margin: 200px auto 0px auto;
 	padding: 10px;
 	position: relative;
