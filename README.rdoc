@@ -13,7 +13,7 @@ http://github.com/nuxy/Tulip-Title-Tips/raw/master/preview.jpg
 
 == Installation
 
-Please refer to the {README.html}[http://labs.mbrooks.info/Tulip-Title-Tips] file for more information about this package.
+Please refer to the {README.html}[http://labs.mbrooks.info/demos/Tulip-Title-Tips] file for more information about this package.
 
 == Author
 
