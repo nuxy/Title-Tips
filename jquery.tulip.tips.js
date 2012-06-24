@@ -29,9 +29,8 @@
 
 				if ( $.isEmptyObject(data) ) {
 					$this.data({
-						container : $this,
-						nodes     : $this.find('[title]'),
-						options   : settings
+						nodes   : $this.find('[title]'),
+						options : settings
 					});
 
 					$this.TulipTips('generate');
