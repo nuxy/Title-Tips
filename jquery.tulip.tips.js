@@ -12,7 +12,7 @@
 
 (function($) {
 	var methods = {
-		init : function(options) {
+		"init" : function(options) {
 
 			// default options
 			var settings = $.extend({
@@ -38,107 +38,105 @@
 			});
 		},
 
-		destroy : function() {
+		"destroy" : function() {
 			return this.each(function() {
 				$(this).removeData();
 			});
 		},
 
-		generate : function() {
-			return this.each(function() {
-				var $this = $(this),
-					data  = $this.data();
+		"generate" : function() {
+			var $this = $(this),
+				data  = $this.data();
 
-				var active = null;
+			var active = null;
 
-				// process elements that contain [title] attribute
-				data.nodes.each(function() {
-					var elm = $(this);
-					var obj = createTooltip( elm.attr('title') );
+			// process elements that contain [title] attribute
+			data.nodes.each(function() {
+				var elm = $(this),
+					obj = createTooltip( elm.attr('title') );
 
-					elm.removeAttr('title', null);
+				elm.removeAttr('title', null);
 
-					// toggle visibility on mouse events
-					elm.bind(data.options.eventType, function() {
-						var elmPosX   = $(this).position().left;
-						var elmPosY   = $(this).position().top;
-						var elmHeight = $(this).height();
-						var elmWidth  = $(this).width();
+				// toggle visibility on mouse events
+				elm.bind(data.options.eventType, function() {
+					var elmPosX   = $(this).position().left,
+						elmPosY   = $(this).position().top,
+						elmHeight = $(this).height(),
+						elmWidth  = $(this).width();
 
-						$(this).append(obj);
+					$(this).append(obj);
 
-						var objPosX   = elmPosX;
-						var objPosY   = elmPosY;
-						var objHeight = obj.height();
-						var objWidth  = obj.width();
+					var objPosX   = elmPosX,
+						objPosY   = elmPosY,
+						objHeight = obj.height(),
+						objWidth  = obj.width();
 
-						// calculate target position
-						switch(data.options.alignPos) {
-							case 'center':
-								objPosX = elmPosX + (elmWidth  / 2);
-							break;
-							case 'left':
-								objPosX = elmPosX - objWidth;
-							break;
-							case 'right':
-								objPosX = elmPosX + elmWidth;
-							break;
-						}
+					// calculate target position
+					switch(data.options.alignPos) {
+						case 'center':
+							objPosX = elmPosX + (elmWidth  / 2);
+						break;
+						case 'left':
+							objPosX = elmPosX - objWidth;
+						break;
+						case 'right':
+							objPosX = elmPosX + elmWidth;
+						break;
+					}
 
+					obj.css({
+						display : 'block',
+						left    : objPosX,
+						top     : elmPosY - (objHeight / 2) - (elmHeight * 2)
+					});
+
+					if ($.browser.msie && data.options.pngAlpha) {
 						obj.css({
-							display : 'block',
-							left    : objPosX,
-							top     : elmPosY - (objHeight / 2) - (elmHeight * 2)
+							opacity : 'show'
 						});
+					}
+					else {
+						if (active) { return }
 
-						if ($.browser.msie && data.options.pngAlpha) {
-							obj.css({
-								opacity : 'show'
-							});
-						}
-						else {
-							if (active) { return }
+						obj.stop().animate({
+							opacity : 1,
+							queue   : false
+						},
+						data.options.animSpeed, data.options.animEasing);
 
-							obj.stop().animate({
-								opacity : 1,
-								queue   : false
-							},
-							data.options.animSpeed, data.options.animEasing);
+						active = true;
+					}
+				});
 
-							active = true;
-						}
-					});
+				elm.mouseout(function() {
+					if ($.browser.msie && data.options.pngAlpha) {
+						obj.css({
+							display : 'none',
+							opacity : 'hide'
+						});
+					}
+					else {
+						if (!active) { return }
 
-					elm.mouseout(function() {
-						if ($.browser.msie && data.options.pngAlpha) {
-							obj.css({
-								display : 'none',
-								opacity : 'hide'
-							});
-						}
-						else {
-							if (!active) { return }
+						obj.stop().animate({
+							opacity : 0,
+							queue   : false
+						},
+						data.options.animSpeed, data.options.animEasing,
+							function() {
+								$(this).css({
+									display : 'none'
+								});
+							}
+						);
 
-							obj.stop().animate({
-								opacity : 0,
-								queue   : false
-							},
-							data.options.animSpeed, data.options.animEasing,
-								function() {
-									$(this).css({
-										display : 'none'
-									});
-								}
-							);
+						active = null;
+					}
+				});
 
-							active = null;
-						}
-					});
-
-					// prevent bubbling
-					obj.bind(data.options.eventType, function(event) {
-						event.stopPropagation();
-					});
+				// prevent bubbling
+				obj.bind(data.options.eventType, function(event) {
+					event.stopPropagation();
 				});
 			});
 		}
@@ -146,10 +144,10 @@
 
 	$.fn.TulipTips = function(method) {
 		if (methods[method]) {
-			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1) );
+			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
 		}
 		else
-		if (typeof method === 'object' || ! method) {
+		if (typeof method === 'object' || !method) {
 			return methods.init.apply(this, arguments);
 		}
 		else {
