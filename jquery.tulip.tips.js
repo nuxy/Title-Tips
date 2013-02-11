@@ -19,8 +19,7 @@
 				alignPos   : 'right',
 				animEasing : 'linear',
 				animSpeed  : 'slow',
-				eventType  : 'click',
-				pngAlpha   : true
+				eventType  : 'click'
 			}, options);
 
 			return this.each(function() {
@@ -76,9 +75,11 @@
 						case 'center':
 							objPosX = elmPosX + (elmWidth  / 2);
 						break;
+
 						case 'left':
 							objPosX = elmPosX - objWidth;
 						break;
+
 						case 'right':
 							objPosX = elmPosX + elmWidth;
 						break;
@@ -90,10 +91,8 @@
 						top     : elmPosY - (objHeight / 2) - (elmHeight * 2)
 					});
 
-					if ($.browser.msie && data.options.pngAlpha) {
-						obj.css({
-							opacity : 'show'
-						});
+					if (!$.support.opacity) {
+						obj.css('opacity','show');
 					}
 					else {
 						if (active) { return }
@@ -109,7 +108,7 @@
 				});
 
 				elm.mouseout(function() {
-					if ($.browser.msie && data.options.pngAlpha) {
+					if (!$.support.opacity) {
 						obj.css({
 							display : 'none',
 							opacity : 'hide'
@@ -118,15 +117,13 @@
 					else {
 						if (!active) { return }
 
-						obj.stop().animate({
+						obj.animate({
 							opacity : 0,
 							queue   : false
 						},
 						data.options.animSpeed, data.options.animEasing,
 							function() {
-								$(this).css({
-									display : 'none'
-								});
+								$(this).css('display','none');
 							}
 						);
 
@@ -169,16 +166,11 @@
 				.addClass('tulip_tips image')
 				.append(content);
 
-		var shadow
+		var tooltip
 			= $('<div></div>')
-				.addClass('tulip_tips shadow')
+				.addClass('tulip_tips tooltip')
 				.append(image);
 
-		var object
-			= $('<div></div>')
-				.addClass('tulip_tips object')
-				.append(shadow);
-
-		return object;
+		return tooltip;
 	}
 })(jQuery);
