@@ -39,10 +39,6 @@ div.tulip_tips.image {
 	/* background-image: url( /path/to/bubble.png ); */
 }
 
-div.tulip_tips.shadow {
-	/* background-image: url( /path/to/shadow.png ); */
-}
-
 span.tulip_tips.content {
 	color: #000000;
 	font-size: 14px;
