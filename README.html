@@ -27,7 +27,7 @@
 <h2>Installation</h2>
 
 <ol>
-	<li>Download the latest <a href="https://github.com/nuxy/Tulip-Title-Tips/zipball/master">sources</a> to your computer using a web browser.</li>
+	<li>Download the latest <a href="https://github.com/nuxy/Tulip-Title-Tips/tags">sources</a> to your computer using a web browser.</li>
 	<li>Extract the contents of the <em>.zip</em> into a folder on your local computer.</li>
 	<li>Upload the folder with the <strong>following files</strong> to your web site.</li>
 </ol>
@@ -101,26 +101,9 @@ $(document).ready(function() {
 		<td>mouse event to bind to the trigger element</td>
 		<td>click</td>
 	</tr>
-	<tr>
-		<td>pngAlpha</td>
-		<td>disable fadeIn/fadeOut animations (IE only)</td>
-		<td>true</td>
-	</tr>
 </table>
 
 <p>Click <a href="http://jqueryui.com/demos/effect/easing.html">here</a> for more information about the available jQuery UI Easing effects.</p>
-
-<h2>Element Tree View</h2>
-
-<p>Use the following as a guide when modifying content output elements.</p>
-
-<pre>                                     [DIV.tulip_tips.object]
-                                                |
-                                     [DIV.tulip_tips.shadow]
-                                                |
-                                     [DIV.tulip_tips.bubble]
-                                                |
-                                    [SPAN.tulip_tips.content]</pre>
 
 <h2>Event Bubbling Issues</h2>
 
@@ -128,11 +111,11 @@ $(document).ready(function() {
 
 <h2>PNG Animation Issues</h2>
 
-<p>Due to the <a href="http://blogs.msdn.com/b/ie/archive/2005/04/26/412263.aspx">lack of support</a> for 24-bit PNG's containing alpha-transparency in Microsoft products, the animation fadeIn/Out effects for content output elements on Internet Explorer 7+ web browsers has been disabled by default.  You can re-enable this feature by setting the <code>pngAlpha</code> property to <em>false</em> when using images that do not contain alpha-channels.</p>
+<p>Due to the <a href="http://blogs.msdn.com/b/ie/archive/2005/04/26/412263.aspx">lack of support</a> for PNG's containing alpha-transparency in Microsoft products, the animation fadeIn/Out effects for content output elements on Internet Explorer 7 & 8 web browsers has been disabled by default.</p>
 
 <h2>Releases</h2>
 
-<p>I have included with this package a <a href="http://dean.edwards.name/packer">packed</a> version (2 kB) and developers version (unpacked 3.7 kB)</p>
+<p>I have included with this package a <a href="http://dean.edwards.name/packer">packed</a> version (1.9 kB) and developers version (unpacked 3.5 kB)</p>
 
 <p>You can always find the latest updates within this projects repository.</p>
 
