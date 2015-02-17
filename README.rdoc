@@ -1,8 +1,8 @@
-= Tulip Title Tips
+= Title Tips
 
 Pretty output of title attribute values on mouse events that can be easily added to pre-existing elements.
 
-http://github.com/nuxy/Tulip-Title-Tips/raw/master/preview.jpg
+http://github.com/nuxy/Title-Tips/raw/master/preview.jpg
 
 == Features
 
@@ -13,7 +13,7 @@ http://github.com/nuxy/Tulip-Title-Tips/raw/master/preview.jpg
 
 == Installation
 
-Download the latest {sources}[https://github.com/nuxy/Tulip-Title-Tips/tags] and refer to the {README}[http://labs.mbrooks.info/demos/Tulip-Title-Tips/README.html] for more information about this package.
+Download the latest {sources}[https://github.com/nuxy/Title-Tips/tags] and refer to the {README}[http://labs.mbrooks.info/demos/Title-Tips/README.html] for more information about this package.
 
 == Author
 

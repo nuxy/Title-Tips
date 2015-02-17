@@ -1,5 +1,5 @@
 /*
- *  Tulip Title Tips
+ *  Title Tips
  *  Pretty output of title attribute values on mouse events
  *
  *  Copyright 2011-2013, Marc S. Brooks (http://mbrooks.info)
@@ -32,7 +32,7 @@
 						options : settings
 					});
 
-					$this.TulipTips('generate');
+					$this.TitleTips('generate');
 				}
 			});
 		},
@@ -139,7 +139,7 @@
 		}
 	};
 
-	$.fn.TulipTips = function(method) {
+	$.fn.TitleTips = function(method) {
 		if (methods[method]) {
 			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
 		}
@@ -148,7 +148,7 @@
 			return methods.init.apply(this, arguments);
 		}
 		else {
-			$.error('Method ' +  method + ' does not exist on jQuery.TulipTips');
+			$.error('Method ' +  method + ' does not exist on jQuery.TitleTips');
 		}
 	};
 
@@ -158,17 +158,17 @@
 	function createTooltip(text) {
 		var content
 			= $('<span></span>')
-				.addClass('tulip_tips content')
+				.addClass('title_tips content')
 				.append(text);
 
 		var image
 			= $('<div></div>')
-				.addClass('tulip_tips image')
+				.addClass('title_tips image')
 				.append(content);
 
 		var tooltip
 			= $('<div></div>')
-				.addClass('tulip_tips tooltip')
+				.addClass('title_tips tooltip')
 				.append(image);
 
 		return tooltip;

@@ -1,4 +1,4 @@
-Tulip Title Tips - Pretty output of title attribute values on mouse events
+Title Tips - Pretty output of title attribute values on mouse events
 
 Copyright 2011-2013, Marc S. Brooks (http://mbrooks.info)
 
