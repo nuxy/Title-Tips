@@ -12,14 +12,14 @@
 
 (function($) {
 	var methods = {
-		"init" : function(options) {
+		"init": function(options) {
 
 			// default options
 			var settings = $.extend({
-				alignPos   : 'right',
-				animEasing : 'linear',
-				animSpeed  : 'slow',
-				eventType  : 'click'
+				alignPos:   'right',
+				animEasing: 'linear',
+				animSpeed:  'slow',
+				eventType:  'click'
 			}, options);
 
 			return this.each(function() {
@@ -28,8 +28,8 @@
 
 				if ( $.isEmptyObject(data) ) {
 					$this.data({
-						nodes   : $this.find('[title]'),
-						options : settings
+						nodes:   $this.find('[title]'),
+						options: settings
 					});
 
 					$this.TitleTips('generate');
@@ -37,13 +37,13 @@
 			});
 		},
 
-		"destroy" : function() {
+		"destroy": function() {
 			return this.each(function() {
 				$(this).removeData();
 			});
 		},
 
-		"generate" : function() {
+		"generate": function() {
 			var $this = $(this),
 				data  = $this.data();
 
@@ -86,9 +86,9 @@
 					}
 
 					obj.css({
-						display : 'block',
-						left    : objPosX,
-						top     : elmPosY - (objHeight / 2) - (elmHeight * 2)
+						display: 'block',
+						left:    objPosX,
+						top:     elmPosY - (objHeight / 2) - (elmHeight * 2)
 					});
 
 					if (!$.support.opacity) {
@@ -98,8 +98,8 @@
 						if (active) { return }
 
 						obj.stop().animate({
-							opacity : 1,
-							queue   : false
+							opacity: 1,
+							queue:   false
 						},
 						data.options.animSpeed, data.options.animEasing);
 
@@ -110,16 +110,16 @@
 				elm.mouseout(function() {
 					if (!$.support.opacity) {
 						obj.css({
-							display : 'none',
-							opacity : 'hide'
+							display: 'none',
+							opacity: 'hide'
 						});
 					}
 					else {
 						if (!active) { return }
 
 						obj.animate({
-							opacity : 0,
-							queue   : false
+							opacity: 0,
+							queue:   false
 						},
 						data.options.animSpeed, data.options.animEasing,
 							function() {
