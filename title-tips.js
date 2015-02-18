@@ -10,6 +10,10 @@
  *    jquery.js
  */
 
+if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace('.', '')) < parseInt('1.8.3'.replace('.', '')))) {
+	throw new Error('Tidy-Table requires jQuery 1.8.3 or greater.');
+}
+
 (function($) {
 	var methods = {
 		"init": function(options) {
