@@ -1,4 +1,4 @@
-/*
+/**
  *  Title Tips
  *  Pretty output of HTML title attribute values on mouse events
  *
@@ -15,16 +15,28 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 }
 
 (function($) {
-	var methods = {
-		"init": function(options) {
 
-			// default options
-			var settings = $.extend({
+	/**
+	 * @namespace TitleTips
+	 */
+	var methods = {
+
+		/**
+		 * Create new instance of Title-Tips
+		 * @memberof TitleTips
+		 * @method init
+		 * @param {Object} settings
+		 * @returns {Object} jQuery object
+		 */
+		"init": function(settings) {
+
+			// default settings 
+			var defaults = $.extend({
 				alignPos:   'right',
 				animEasing: 'linear',
 				animSpeed:  'slow',
 				eventType:  'click'
-			}, options);
+			}, settings);
 
 			return this.each(function() {
 				var $this = $(this);
@@ -33,21 +45,30 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 				if ( $.isEmptyObject(data) ) {
 					$this.data({
 						nodes:   $this.find('[title]'),
-						options: settings
+						options: defaults
 					});
 
-					$this.TitleTips('generate');
+					$this.TitleTips('_generateTips');
 				}
 			});
 		},
 
+		/**
+		 * Perform cleanup
+		 * @memberof TitleTips
+		 * @method destroy
+		 */
 		"destroy": function() {
 			return this.each(function() {
 				$(this).removeData();
 			});
 		},
 
-		"generate": function() {
+		/**
+		 * Generate Title-Tips elements
+		 * @protected
+		 */
+		"_generateTips": function() {
 			var $this = $(this),
 				data  = $this.data();
 
@@ -56,7 +77,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 			// process elements that contain [title] attribute
 			data.nodes.each(function() {
 				var elm = $(this),
-					obj = createTooltip( elm.attr('title') );
+					obj = $this.TitleTips('_createTooltip', elm.attr('title'));
 
 				elm.removeAttr('title', null);
 
@@ -96,7 +117,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 					});
 
 					if (!$.support.opacity) {
-						obj.css('opacity','show');
+						obj.css('opacity', 'show');
 					}
 					else {
 						if (active) { return }
@@ -127,7 +148,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 						},
 						data.options.animSpeed, data.options.animEasing,
 							function() {
-								$(this).css('display','none');
+								$(this).css('display', 'none');
 							}
 						);
 
@@ -140,6 +161,31 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 					event.stopPropagation();
 				});
 			});
+		},
+
+		/**
+		 * Create tooltip HTML elements
+		 * @param {String} text
+		 * @returns {Object} jQuery object
+		 * @private
+		 */
+		"_createTooltip": function(text) {
+			var content
+				= $('<span></span>')
+					.addClass('title_tips content')
+					.append(text);
+
+			var image
+				= $('<div></div>')
+					.addClass('title_tips image')
+					.append(content);
+
+			var tooltip
+				= $('<div></div>')
+					.addClass('title_tips tooltip')
+					.append(image);
+
+			return tooltip;
 		}
 	};
 
@@ -155,26 +201,4 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 			$.error('Method ' +  method + ' does not exist on jQuery.TitleTips');
 		}
 	};
-
-	/*
-	 * Return a new tooltip object
-	 */
-	function createTooltip(text) {
-		var content
-			= $('<span></span>')
-				.addClass('title_tips content')
-				.append(text);
-
-		var image
-			= $('<div></div>')
-				.addClass('title_tips image')
-				.append(content);
-
-		var tooltip
-			= $('<div></div>')
-				.addClass('title_tips tooltip')
-				.append(image);
-
-		return tooltip;
-	}
 })(jQuery);
