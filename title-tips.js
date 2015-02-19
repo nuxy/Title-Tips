@@ -39,7 +39,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 			}, settings);
 
 			return this.each(function() {
-				var $this = $(this);
+				var $this = $(this),
 					data  = $this.data();
 
 				if ( $.isEmptyObject(data) ) {
@@ -91,7 +91,6 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 					$(this).append(obj);
 
 					var objPosX   = elmPosX,
-						objPosY   = elmPosY,
 						objHeight = obj.height(),
 						objWidth  = obj.width();
 
@@ -120,7 +119,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 						obj.css('opacity', 'show');
 					}
 					else {
-						if (active) { return }
+						if (active) { return; }
 
 						obj.stop().animate({
 							opacity: 1,
@@ -140,7 +139,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 						});
 					}
 					else {
-						if (!active) { return }
+						if (!active) { return; }
 
 						obj.animate({
 							opacity: 0,
