@@ -30,16 +30,16 @@
 
 /* Customize */
 
-div.title_tips {
+.title_tips {
   height: 115px;
   width: 150px;
 }
 
-div.title_tips.image {
+.title_tips.image {
   /* background-image: url( /path/to/bubble.png ); */
 }
 
-span.title_tips.content {
+.title_tips.content {
   color: #000000;
   font-size: 14px;
   font-weight: normal;
