@@ -1,8 +1,8 @@
 /**
  *  Title Tips
- *  Pretty output of HTML title attribute values on mouse events
+ *  Pretty output of HTML title attribute values on mouse events.
  *
- *  Copyright 2011-2015, Marc S. Brooks (http://mbrooks.info)
+ *  Copyright 2011-2015, Marc S. Brooks (https://mbrooks.info)
  *  Licensed under the MIT license:
  *  http://www.opensource.org/licenses/mit-license.php
  *
