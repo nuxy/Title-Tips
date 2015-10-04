@@ -1,52 +1,52 @@
-/* example */
+/* Example */
 
 #container {
-	border: 1px solid #CCCCCC;
-	font-size: 16px;
-	margin: 200px auto 0px auto;
-	padding: 10px;
-	position: relative;
-	text-align: justify;
-	width: 680px;
+  border: 1px solid #CCCCCC;
+  font-size: 16px;
+  margin: 200px auto 0px auto;
+  padding: 10px;
+  position: relative;
+  text-align: justify;
+  width: 680px;
 }
 
 #container strong {
-	color: #FF6600;
-	cursor: pointer;
+  color: #FF6600;
+  cursor: pointer;
 }
 
 #notes {
-	color: #787878;
-	font-size: 12px;
-	margin-top: 25px;
-	text-align: center;
-	width: 100%;
+  color: #787878;
+  font-size: 12px;
+  margin-top: 25px;
+  text-align: center;
+  width: 100%;
 }
 
 #notes strong {
-	color: #FF6600;
+  color: #FF6600;
 }
 
 
-/* customize */
+/* Customize */
 
 div.title_tips {
-	height: 115px;
-	width: 150px;
+  height: 115px;
+  width: 150px;
 }
 
 div.title_tips.image {
-	/* background-image: url( /path/to/bubble.png ); */
+  /* background-image: url( /path/to/bubble.png ); */
 }
 
 span.title_tips.content {
-	color: #000000;
-	font-size: 14px;
-	font-weight: normal;
-	left: 25px;
-	overflow: hidden;
-	padding: 1px;
-	text-align: center;
-	top: 30px;
-	width: 100px;
+  color: #000000;
+  font-size: 14px;
+  font-weight: normal;
+  left: 25px;
+  overflow: hidden;
+  padding: 1px;
+  text-align: center;
+  top: 30px;
+  width: 100px;
 }
