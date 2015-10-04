@@ -23,12 +23,12 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 
     /**
      * Create new instance of Title-Tips
-         *
+     *
      * @memberof TitleTips
      * @method init
-         *
+     *
      * @param {Object} settings
-         *
+     *
      * @returns {Object} jQuery object
      */
     "init": function(settings) {
@@ -58,7 +58,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 
     /**
      * Perform cleanup
-         *
+     *
      * @memberof TitleTips
      * @method destroy
      */
@@ -168,11 +168,11 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 
     /**
      * Create tooltip HTML elements
-         *
-         * @private
-         *
+     *
+     * @private
+     *
      * @param {String} text
-         *
+     *
      * @returns {Object} jQuery object
      */
     "_createTooltip": function(text) {
