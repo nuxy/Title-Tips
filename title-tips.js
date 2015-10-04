@@ -23,14 +23,17 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 
 		/**
 		 * Create new instance of Title-Tips
+         *
 		 * @memberof TitleTips
 		 * @method init
+         *
 		 * @param {Object} settings
+         *
 		 * @returns {Object} jQuery object
 		 */
 		"init": function(settings) {
 
-			// default settings 
+			// Default settings
 			var defaults = $.extend({
 				alignPos:   'right',
 				animEasing: 'linear',
@@ -55,6 +58,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 
 		/**
 		 * Perform cleanup
+         *
 		 * @memberof TitleTips
 		 * @method destroy
 		 */
@@ -74,14 +78,14 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 
 			var active = null;
 
-			// process elements that contain [title] attribute
+			// Process elements that contain [title] attribute.
 			data.nodes.each(function() {
 				var elm = $(this),
 					obj = $this.TitleTips('_createTooltip', elm.attr('title'));
 
 				elm.removeAttr('title', null);
 
-				// toggle visibility on mouse events
+				// Toggle visibility on mouse events
 				elm.bind(data.options.eventType, function() {
 					var elmPosX   = $(this).position().left,
 						elmPosY   = $(this).position().top,
@@ -94,7 +98,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 						objHeight = obj.height(),
 						objWidth  = obj.width();
 
-					// calculate target position
+					// Calculate target position
 					switch(data.options.alignPos) {
 						case 'center':
 							objPosX = elmPosX + (elmWidth  / 2);
@@ -155,7 +159,7 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 					}
 				});
 
-				// prevent bubbling
+				// Prevent bubbling
 				obj.bind(data.options.eventType, function(event) {
 					event.stopPropagation();
 				});
@@ -164,9 +168,12 @@ if (!window.jQuery || (window.jQuery && parseInt(window.jQuery.fn.jquery.replace
 
 		/**
 		 * Create tooltip HTML elements
+         *
+         * @private
+         *
 		 * @param {String} text
+         *
 		 * @returns {Object} jQuery object
-		 * @private
 		 */
 		"_createTooltip": function(text) {
 			var content
