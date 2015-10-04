@@ -1,8 +1,8 @@
-# Title Tips
+# Title Tips [<img src="https://travis-ci.org/nuxy/Title-Tips.svg?branch=master" alt="Build Status" />](https://travis-ci.org/nuxy/Title-Tips)
 
 Pretty output of HTML title attribute values on mouse events that can be easily added to pre-existing elements.
 
-http://github.com/nuxy/Title-Tips/raw/master/preview.jpg
+[<img src="https://nuxy.github.io/Title-Tips/preview.gif" alt="Title-Tips" />](https://nuxy.github.io/Title-Tips)
 
 ## Features
 
@@ -13,7 +13,7 @@ http://github.com/nuxy/Title-Tips/raw/master/preview.jpg
 
 ## Installation
 
-Download the latest [sources](https://github.com/nuxy/Title-Tips/tags) and refer to the [README](http://labs.mbrooks.info/demos/Title-Tips/README.html) for more information about this package.
+Download the latest [sources](https://github.com/nuxy/Title-Tips/tags) and refer to the [README](https://nuxy.github.io/Title-Tips) for more information about this package.
 
 ## Author
 
