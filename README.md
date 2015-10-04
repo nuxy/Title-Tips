@@ -2,7 +2,7 @@
 
 Pretty output of HTML title attribute values on mouse events that can be easily added to pre-existing elements.
 
-[<img src="https://nuxy.github.io/Title-Tips/preview.gif" alt="Title-Tips" />](https://nuxy.github.io/Title-Tips)
+[<img src="https://nuxy.github.io/Title-Tips/preview.jpg" alt="Title-Tips" />](https://nuxy.github.io/Title-Tips)
 
 ## Features
 
